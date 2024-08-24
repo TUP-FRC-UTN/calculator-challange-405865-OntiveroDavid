@@ -1,0 +1,26 @@
+<div class="card text-center mx-auto mt-5" style="width: 18rem;">
+    <div class="card-body">
+        <h5 class="card-title">Calculadora</h5>
+
+    <div class="mb-3">
+        <label for="valor1" class="form-label">Valor 1</label>
+        <input type="number" id="valor1" class="form-control" (input)="actualizarValor1($event)">
+    </div>
+
+    <div class="mb-3">
+        <label for="valor2" class="form-label">Valor 2</label>
+        <input type="number" id="valor2" class="form-control" (input)="actualizarValor2($event)">
+    </div>
+
+    <div class="mb-3">
+        <label for="resultado" class="form-label">Resultado</label>
+        <input type="text" id="resultado" class="form-control" [value]="resultado !== null ? resultado : ''" readonly>
+    </div>
+
+    <app-calc-actions 
+        [valor1]="valor1" 
+        [valor2]="valor2" 
+        (resultado)="recibirResultado($event)">
+    </app-calc-actions>
+    </div>
+</div>
